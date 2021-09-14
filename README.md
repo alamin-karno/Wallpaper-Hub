@@ -4,6 +4,10 @@ This is my flutter project where I have learned about API & http connection. I h
 
 # Screenshots:
 
+
+## 0. Web and Android Screen:
+<img src="https://github.com/karno786/Wallpaper-Hub/blob/master/screenshots/Web and Android Screen.PNG" alt="Wallpaper Hub Web and Android Screenshot" title="Wallpaper Hub Web and Android" >
+
 ## 1. Loading Screen:
 <img src="https://github.com/karno786/Wallpaper-Hub/blob/master/screenshots/Screenshot_1631622966.png" alt="Wallpaper Hub Loading Screenshot" width="350" title="Wallpaper Hub Loading" >
 
