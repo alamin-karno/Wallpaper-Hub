@@ -41,7 +41,7 @@ This is my flutter project where I have learned about API & http connection. I h
 
 
 ## 10. WebView Error Screen:
-<img src="https://github.com/karno786/Wallpaper-Hub/blob/master/screenshots/Wallpaper Hub - Web Version.PNG" alt="Wallpaper Hub WebView Error Screenshot" width="350" title="Wallpaper Hub WebView Error Screen" >
+<img src="https://github.com/karno786/Wallpaper-Hub/blob/master/screenshots/Wallpaper Hub - Web Version.PNG" alt="Wallpaper Hub WebView Error Screenshot" title="Wallpaper Hub WebView Error Screen" >
 
 
 ### Disclaimer
