@@ -14,7 +14,7 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:wallpaper_hub/core/dio/dio_module.dart' as _i553;
 import 'package:wallpaper_hub/features/home/data/datasource/wallpaper_rest_client.dart'
-    as _i703;
+    as _i980;
 import 'package:wallpaper_hub/features/home/data/repository/wallpaper_repository_impl.dart'
     as _i828;
 import 'package:wallpaper_hub/features/home/domain/repository/wallpaper_repository.dart'
@@ -42,11 +42,11 @@ extension GetItInjectableX on _i174.GetIt {
       () => dioModule.getUnauthorizedDioClient(),
       instanceName: 'Unauthorized',
     );
-    gh.singleton<_i703.WallpaperRestClient>(() =>
-        _i703.WallpaperRestClient(gh<_i361.Dio>(instanceName: 'Authorized')));
+    gh.singleton<_i980.WallpaperRestClient>(() =>
+        _i980.WallpaperRestClient(gh<_i361.Dio>(instanceName: 'Authorized')));
     gh.singleton<_i927.WallpaperRepository>(
-        () => _i828.WallpaperRepositoryImpl(gh<_i703.WallpaperRestClient>()));
-    gh.factory<_i674.GetCuratedWallPapersUsecase>(() =>
+        () => _i828.WallpaperRepositoryImpl(gh<_i980.WallpaperRestClient>()));
+    gh.singleton<_i674.GetCuratedWallPapersUsecase>(() =>
         _i674.GetCuratedWallPapersUsecase(
             wallpaperRepository: gh<_i927.WallpaperRepository>()));
     return this;

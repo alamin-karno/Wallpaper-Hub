@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:wallpaper_hub/features/home/presentation/widgets/wallpaper_gridview.dart';
 
 import '../../../../core/shared/shared.dart';
 
@@ -10,25 +10,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
+        physics: ClampingScrollPhysics(),
         slivers: [
-          SliverAppBar(
-            title: AppNameWidget(),
-          ),
-          SliverToBoxAdapter(
-            child: MasonryGridView.count(
-              shrinkWrap: true,
-              crossAxisCount: 2,
-              mainAxisSpacing: 4,
-              crossAxisSpacing: 4,
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return Container(
-                  height: 200 * (index % 2 + 1),
-                  color: Colors.red,
-                );
-              },
-            ),
-          ),
+          SliverAppBar(title: AppNameWidget()),
+          SliverToBoxAdapter(child: WallpaperGridview()),
         ],
       ),
     );
