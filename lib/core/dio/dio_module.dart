@@ -24,7 +24,7 @@ abstract class DioModule {
 
   Dio _dioClient() {
     final baseOptions = BaseOptions(
-      baseUrl: AppConstants.baseUrl,
+      baseUrl: AppApiEndPoint.baseUrl,
       receiveDataWhenStatusError: true,
       connectTimeout: AppConstants.requestTimeoutAsSeconds,
       receiveTimeout: AppConstants.requestTimeoutAsSeconds,

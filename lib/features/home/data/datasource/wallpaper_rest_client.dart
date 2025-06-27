@@ -3,14 +3,14 @@ import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:wallpaper_hub/features/home/data/model/paginated_wallpaper_response.dart';
 
-part 'wallpaper_remote_datasource.g.dart';
+part 'wallpaper_rest_client.g.dart';
 
 @RestApi()
 @singleton
-abstract class WallpaperRemoteDatasource {
+abstract class WallpaperRestClient {
   @factoryMethod
-  factory WallpaperRemoteDatasource(@Named("Authorized") Dio dio) =
-      _WallpaperRemoteDatasource;
+  factory WallpaperRestClient(@Named("Authorized") Dio dio) =
+      _WallpaperRestClient;
 
   @GET('/curated')
   Future<PaginatedWallpaperResponse> getCuratedWallpapers({

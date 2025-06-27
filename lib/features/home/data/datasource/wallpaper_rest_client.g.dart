@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'wallpaper_remote_datasource.dart';
+part of 'wallpaper_rest_client.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'wallpaper_remote_datasource.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
 
-class _WallpaperRemoteDatasource implements WallpaperRemoteDatasource {
-  _WallpaperRemoteDatasource(this._dio, {this.baseUrl, this.errorLogger});
+class _WallpaperRestClient implements WallpaperRestClient {
+  _WallpaperRestClient(this._dio, {this.baseUrl, this.errorLogger});
 
   final Dio _dio;
 
