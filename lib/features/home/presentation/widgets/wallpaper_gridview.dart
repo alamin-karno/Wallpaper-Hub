@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:wallpaper_hub/features/home/presentation/cubit/wallpaper_cubit.dart';
 
 import '../../../../core/shared/shared.dart';
@@ -41,7 +42,23 @@ class WallpaperGridview extends StatelessWidget {
                 clipBehavior: Clip.antiAlias,
                 child: CachedNetworkImage(
                   fit: BoxFit.cover,
-                  imageUrl: wallpaper.src.large,
+                  imageUrl: wallpaper.src.large + 'aa',
+                  placeholder: (context, url) => Shimmer.fromColors(
+                    baseColor: Colors.white54,
+                    highlightColor: Colors.white70,
+                    child: Container(
+                      height: (index % 5 + 1) * 100,
+                      child: Icon(
+                        Icons.image,
+                        color: Colors.grey.shade300,
+                        size: 50,
+                      ),
+                    ),
+                  ),
+                  errorWidget: (context, url, error) => Icon(
+                    Icons.image,
+                    color: Colors.grey.shade300,
+                  ),
                 ),
               );
             },
