@@ -7,7 +7,8 @@
    <application
        android:requestLegacyExternalStorage="true"
         android:label="wallpaper_hub"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+       android:enableOnBackInvokedCallback="true">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

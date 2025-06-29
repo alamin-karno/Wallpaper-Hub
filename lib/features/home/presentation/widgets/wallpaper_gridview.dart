@@ -1,11 +1,10 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:wallpaper_hub/features/home/presentation/cubit/wallpaper_cubit.dart';
 
 import '../../../../core/shared/shared.dart';
+import 'wallpaper_view.dart';
 
 class WallpaperGridview extends StatelessWidget {
   const WallpaperGridview({super.key});
@@ -32,34 +31,9 @@ class WallpaperGridview extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 6, vertical: 20),
             itemCount: wallpapers.length,
             itemBuilder: (context, index) {
-              final wallpaper = wallpapers[index];
-
-              return Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Colors.grey,
-                ),
-                clipBehavior: Clip.antiAlias,
-                child: CachedNetworkImage(
-                  fit: BoxFit.cover,
-                  imageUrl: wallpaper.src.large + 'aa',
-                  placeholder: (context, url) => Shimmer.fromColors(
-                    baseColor: Colors.white54,
-                    highlightColor: Colors.white70,
-                    child: Container(
-                      height: (index % 5 + 1) * 100,
-                      child: Icon(
-                        Icons.image,
-                        color: Colors.grey.shade300,
-                        size: 50,
-                      ),
-                    ),
-                  ),
-                  errorWidget: (context, url, error) => Icon(
-                    Icons.image,
-                    color: Colors.grey.shade300,
-                  ),
-                ),
+              return WallpaperView(
+                index: index,
+                wallpaper: wallpapers[index],
               );
             },
           );

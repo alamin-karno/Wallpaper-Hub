@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wallpaper_hub/features/home/presentation/widgets/wallpaper_gridview.dart';
 
 import '../../../../core/shared/shared.dart';
+import '../../home.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

@@ -1,0 +1,64 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
+import 'package:wallpaper_hub/features/home/domain/entities/wallpaper_data.dart';
+
+import '../../../../core/shared/shared.dart';
+
+class DetailsPage extends StatelessWidget {
+  const DetailsPage({super.key, required this.wallpaper});
+
+  final WallpaperData wallpaper;
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
+    return Scaffold(
+      body: Stack(
+        children: [
+          CachedNetworkImage(
+            height: size.height,
+            width: size.width,
+            fit: BoxFit.cover,
+            imageUrl: wallpaper.src.original,
+            placeholder: (context, url) => Shimmer.fromColors(
+              baseColor: Colors.white54,
+              highlightColor: Colors.white70,
+              child: Container(
+                height: size.height,
+                width: size.width,
+                child: Icon(
+                  Icons.image,
+                  color: Colors.grey.shade300,
+                  size: size.width / 2,
+                ),
+              ),
+            ),
+            errorWidget: (context, url, error) => Icon(
+              Icons.image,
+              color: Colors.grey.shade300,
+              size: size.width / 2,
+            ),
+          ),
+          SafeArea(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomIconButton(
+                  icon: Icons.arrow_back_ios,
+                  onPressed: () {},
+                ),
+                CustomIconButton(
+                  icon: Icons.ios_share,
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

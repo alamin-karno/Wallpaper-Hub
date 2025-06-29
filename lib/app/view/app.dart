@@ -11,7 +11,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Wallpaper Hub',
       theme: ThemeData(primaryColor: Colors.white, useMaterial3: true),
-      routerConfig: AppRouterConfig().router,
+      routerConfig: AppRouterConfig.router,
     );
   }
 }
