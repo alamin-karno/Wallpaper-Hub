@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:wallpaper_hub/features/home/domain/entities/wallpaper_data.dart';
 
-import '../../../../core/shared/shared.dart';
+import '../../details.dart';
 
 class DetailsPage extends StatelessWidget {
   const DetailsPage({super.key, required this.wallpaper});
@@ -41,22 +41,7 @@ class DetailsPage extends StatelessWidget {
               size: size.width / 2,
             ),
           ),
-          SafeArea(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CustomIconButton(
-                  icon: Icons.arrow_back_ios,
-                  onPressed: () {},
-                ),
-                CustomIconButton(
-                  icon: Icons.ios_share,
-                  onPressed: () {},
-                ),
-              ],
-            ),
-          ),
+          TopActionBar(wallpaper: wallpaper),
         ],
       ),
     );
